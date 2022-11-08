@@ -34,7 +34,11 @@ if (!empty($Firstname) || !empty($Lastname) || !empty($Username) ||!empty($Passw
             $stmt->execute();
             echo "New record inserted successfully";
 
+        }else{
+            echo "Username already taken";
         }
+        $stmt->close();
+        $conn->close();
     }
 } else{
     echo "All fields are required";
