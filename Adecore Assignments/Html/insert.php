@@ -11,7 +11,7 @@ if($conn->connect_error){
     die('Connection Failed : '.$conn->connect_error);
 }else{
     $stmt = $conn->prepare("insert into users(Firstname, Lastname, Username, password, Contact, code) values(?,?,?,?,?,?)");
-    $stmt->bind_param("ssssis",$Firstname,$Lastname,$Username,$password,$Contact,$code);
+    $stmt->bind_param("ssssss",$Firstname,$Lastname,$Username,$password,$Contact,$code);
     $stmt->execute();
     echo "registration successful...";
     $stmt->close();

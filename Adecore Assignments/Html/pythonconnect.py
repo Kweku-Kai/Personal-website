@@ -15,12 +15,12 @@ code=form.getvalue("code")
 import mysql.connector
 
 con=mysql.connector.connect(user='root', password='', host='localhost', database='mine')
-cur=con.cursor()
+cursor=con.cursor()
 
-cur.execute("insert into student values(%s,%s,%s,%s,%i,%s)", (firstname,lastname,Username,password,contact,code))
+cursor.execute("insert into users (firstname,lastname,Username,password,contact,code) values(%s,%s,%s,%s,%s,%s)")
 con.commit()
 
-cur.close()
+cursor.close()
 con.close()
 
 print("The entry has been recorde successfully")
