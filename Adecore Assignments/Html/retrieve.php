@@ -1,11 +1,11 @@
 <?php
- $Username = $_POST['Username'];
- $password = $_POST['password'];
+$Username = $_POST['Username'];
+$password = $_POST['password'];
 
- $con = new mysqli("localhost", "root", "", "test");
- if($con->connect_error) {
+$con = new mysqli("localhost", "root", "", "test");
+if($con->connect_error) {
     die("Failed to connect : ".$con->connect_error);
- }else {
+}else {
     $stmt = $con->prepare("select * from users where Username = ?");
     $stmt->bind_param("s", $Username);
     $stmt->execute();
@@ -20,5 +20,5 @@
     }else {
         echo "Invalid Username or Password";
     }
- }
+}
 ?>
