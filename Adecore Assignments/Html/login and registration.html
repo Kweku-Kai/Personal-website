@@ -2,6 +2,7 @@
     <head>
         <title>Login/Register</title>
         <link rel="stylesheet" href="style.css">
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
     </head>
     <body>
         <div class="hero">
@@ -13,21 +14,26 @@
                 </div>
                     <div class="social-icon">
                     <a href="https://www.facebook.com/qwheqhu.dharlington/"><img src="facebook.png"></a>
-                    <a href="url"><img src="insta.png"></a>
-                    <a href="https://wa.me/+233205873510>"><img src="whats.png"></a>
+                    <a href="www.twitter.com/k_kai257"><img src="twitter.png"></a>
+                    <a href="www.google.com"><img src="google.png"></a>
                     </div>
                 <form id="Login" class="input-group">
                     <input type="text" class="input-field" placeholder="Username" required>
-                    <input type="text" class="input-field" placeholder="Contact" required>
-                    <input type="checkbox" class="check-box"><span>Remember contact</span>
+                    <input type="password" class="input-field" placeholder="Password" required>
+                    <input type="checkbox" class="check-box"><span>Remember password</span>
                     <button type="submit" class="submit-btn">Log In</button>
                 </form>
                 <form id="Register" class="input-group" action="insert.php" method="POST">
                     <input type="text" class="input-field" placeholder="First name" required>
                     <input type="text" class="input-field" placeholder="Last name" required>
                     <input type="text" class="input-field" placeholder="Username" required>
-                    <input type="text" class="input-field" placeholder="Contact" required>
-                    <input type="text" class="input-field" placeholder="Diseases" required>
+                    <input type="password" class="input-field" placeholder="Password" required>
+                    <select name="code" id="zip" onchange="country_code()">
+                        <option value="gh">GH</option>
+                        <option value="us">US</option>
+                        <option value="uk">UK</option>
+                        <option value="ng">NG</option>
+                    </select><input type="tel" id="output" class="input-field" placeholder="Contact" required>
                     <input type="checkbox" class="check-box"><span>I agree to the terms & conditions</span>
                     <button type="submit" class="submit-btn">Register</button>
                 </form>
@@ -47,6 +53,22 @@
                 x.style.left = "50px";
                 y.style.left = "450px";
                 z.style.left = "0";}
+            function country_code(){
+                var val = document.getElementById("zip").value;
+                if (val == "gh"){
+                    document.getElementById("output").value = "+233";
+                }
+                else if (val == "us"){
+                    document.getElementById("output").value = "+1";
+                }
+                else if (val == "uk"){
+                    document.getElementById("output").value = "+44";
+                }
+                else if (val == "ng"){
+                    document.getElementById("output").value = "+234";
+                }
+            }
+            
         </script>
     </body>
 </html>
